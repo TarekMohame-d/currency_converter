@@ -1,20 +1,18 @@
+import 'package:currency_converter/app.dart';
+import 'package:currency_converter/core/helpers/constants.dart';
+import 'package:currency_converter/core/service_locator/dependency_injection.dart';
+import 'package:currency_converter/core/services/shared_pref.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
-  runApp(const MainApp());
-}
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await setupGetIt();
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  await ScreenUtil.ensureScreenSize();
 
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
-  }
+  bool isDarkMode =
+      await SharedPref.getBool(SharedPrefKeys.isDarkMode) ?? false;
+
+  runApp(App(isDarkMode: isDarkMode));
 }
