@@ -1,3 +1,6 @@
+import 'package:currency_converter/core/themes/custom_themes/app_bar_theme.dart';
+import 'package:currency_converter/core/themes/custom_themes/snack_bar_theme.dart';
+import 'package:currency_converter/core/themes/custom_themes/text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -12,11 +15,9 @@ class KThemes {
     primaryColor: KColors.primaryColor,
     scaffoldBackgroundColor: KColors.scaffoldDarkColor,
     fontFamily: 'Montserrat',
-    // snackBarTheme: KSnackBarTheme.snackBarDarkTheme,
-    // inputDecorationTheme: KInputDecorationTheme.inputDecorationTheme,
-    // textButtonTheme: KTextButtonTheme.textButtonDarkTheme,
-    // textTheme: KTextTheme.darkTextTheme,
-    // appBarTheme: KAppBarTheme.appBarDarkTheme,
+    snackBarTheme: KSnackBarTheme.snackBarDarkTheme,
+    textTheme: KTextTheme.darkTextTheme,
+    appBarTheme: KAppBarTheme.appBarDarkTheme,
   );
 
   static final ThemeData lightTheme = ThemeData(
@@ -25,10 +26,9 @@ class KThemes {
     primaryColor: KColors.primaryColor,
     scaffoldBackgroundColor: KColors.scaffoldLightColor,
     fontFamily: 'Montserrat',
-    // snackBarTheme: KSnackBarTheme.snackBarLightTheme,
-    // textButtonTheme: KTextButtonTheme.textButtonLightTheme,
-    // textTheme: KTextTheme.lightTextTheme,
-    // appBarTheme: KAppBarTheme.appBarLightTheme,
+    snackBarTheme: KSnackBarTheme.snackBarLightTheme,
+    textTheme: KTextTheme.lightTextTheme,
+    appBarTheme: KAppBarTheme.appBarLightTheme,
   );
 
   static void setSystemUiOverlayStyle(bool isDarkMode) {

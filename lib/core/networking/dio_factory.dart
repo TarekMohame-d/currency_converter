@@ -1,5 +1,6 @@
 import 'package:currency_converter/core/networking/api_constants.dart';
 import 'package:dio/dio.dart';
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioFactory {
   DioFactory._();
@@ -21,6 +22,18 @@ class DioFactory {
 
     final dioInstance = Dio(baseOptions);
 
+    _addDioInterceptor(dioInstance);
+
     return dioInstance;
+  }
+
+  static void _addDioInterceptor(Dio dio) {
+    dio.interceptors.add(
+      PrettyDioLogger(
+        requestBody: true,
+        requestHeader: true,
+        responseHeader: true,
+      ),
+    );
   }
 }
