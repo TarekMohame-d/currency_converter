@@ -1,0 +1,18 @@
+# top-most EditorConfig file
+root = true
+
+# Default settings:
+[*]
+max_line_length = 110
+insert_final_newline = true
+indent_style = space
+trim_trailing_whitespace = true
+
+max_line_length=100
+
+indent_size = 2
+tab_width = 2
+
+[*.{xml,yml,yaml,json,props,targets,code-workspace,html}]
+indent_size = 2
+tab_width = 2
